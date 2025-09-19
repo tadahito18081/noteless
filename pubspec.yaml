@@ -4,37 +4,39 @@ publish_to: none
 version: 1.4.6+146
 
 environment:
-  sdk: '>=2.7.0 <2.12.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-    
-  flutter_markdown: ^0.3.4
-  path_provider: ^1.6.27
-  yaml: ^2.2.1
-  material_design_icons_flutter: ^4.0.5955
+  flutter_markdown: ^0.4.2
+  path_provider: ^2.0.0
+  yaml: ^2.2.0
+  material_design_icons_flutter: ^4.0.5045
   markd:
     git: https://github.com/redsolver/markd.git
-  bsdiff: ^0.1.1
-  webview_flutter: ^1.0.7
+  bsdiff: ^0.1.0
+  webview_flutter: ^1.0.1
   preferences: ^5.2.0
-  html: ^0.14.0+3
-  url_launcher: ^5.7.10
-  package_info: ^0.4.3+4
-  provider: ^4.3.3
+  html: ^0.14.0+2
+  url_launcher: ^6.0.2
+  package_info: ^0.4.0+8
+  provider: ^4.0.5+1
   front_matter: ^1.1.0
-  flutter_slidable: ^0.5.7
-  file_picker: ^1.13.3
+  flutter_slidable: ^0.5.4
+  file_picker: ^3.0.0
   rich_code_editor:
     git: https://github.com/bats64mgutsi/rich_code_editor.git
-  device_info: ^0.4.2+9
-  quick_actions: ^0.4.0
-  receive_sharing_intent: ^1.3.3
-  quiver: ^2.1.5
-  intl: ^0.16.1
-  permission_handler: ^5.1.0+2
-  uuid: ^2.2.2
+  device_info: ^2.0.0
+  quick_actions: ^0.4.0+8
+  receive_sharing_intent: ^1.4.1
+  quiver: ^3.0.0
+  intl: ^0.17.0
+  permission_handler: ^6.1.0
+  uuid: ^3.0.3
+
+dependency_overrides:
+  shared_preferences: ^2.0.4
 
 flutter_icons:
   android: true
