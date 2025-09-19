@@ -38,15 +38,15 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
 
-      # 5. build.gradleから署名設定を削除する ★★★ ここが最終修正 ★★★
+      # 5. build.gradleから署名設定を削除する
       - name: Remove signing configuration from build.gradle
         run: |
           sed -i "/storeFile file(keystoreProperties/d" android/app/build.gradle
           sed -i "/signingConfig signingConfigs.release/d" android/app/build.gradle
 
-      # 6. AndroidのAPKファイルをビルドする
+      # 6. Null Safetyを無効にしてAndroidのAPKファイルをビルドする ★★★ ここが最終修正 ★★★
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build apk --release --no-sound-null-safety
 
       # 7. ビルドされたAPKファイルをアーティファクトとしてアップロードする
       - name: Upload APK artifact
