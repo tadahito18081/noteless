@@ -9,16 +9,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+    
   flutter_markdown: ^0.3.4
   path_provider: ^1.6.27
   yaml: ^2.2.1
   material_design_icons_flutter: ^4.0.5955
   markd:
     git: https://github.com/redsolver/markd.git
-  bsdiff: ^0.1.0
+  bsdiff: ^1.0.0
   webview_flutter: ^1.0.7
-  preferences: ^3.0.1
+  preferences: ^5.2.0
   html: ^0.14.0+3
   url_launcher: ^5.7.10
   package_info: ^0.4.3+4
