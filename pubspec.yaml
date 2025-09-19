@@ -16,7 +16,7 @@ dependencies:
   material_design_icons_flutter: ^4.0.5955
   markd:
     git: https://github.com/redsolver/markd.git
-  bsdiff: ^0.2.0
+  bsdiff: ^0.1.1
   webview_flutter: ^1.0.7
   preferences: ^5.2.0
   html: ^0.14.0+3
