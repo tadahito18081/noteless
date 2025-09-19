@@ -27,11 +27,11 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      # 3. Flutter SDK (2.10.5) をセットアップする
+      # 3. Flutter SDK (1.22.6) をセットアップする ★★★ ここが最終修正 ★★★
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '2.10.5'
+          flutter-version: '1.22.6' # Null Safety導入前の最終安定版
           cache: true
 
       # 4. Flutterの依存パッケージをインストールする
@@ -44,9 +44,9 @@ jobs:
           sed -i "/storeFile file(keystoreProperties/d" android/app/build.gradle
           sed -i "/signingConfig signingConfigs.release/d" android/app/build.gradle
 
-      # 6. Null Safetyを無効にしてAndroidのAPKファイルをビルドする ★★★ ここが最終修正 ★★★
+      # 6. AndroidのAPKファイルをビルドする
       - name: Build APK
-        run: flutter build apk --release --no-sound-null-safety
+        run: flutter build apk --release
 
       # 7. ビルドされたAPKファイルをアーティファクトとしてアップロードする
       - name: Upload APK artifact
