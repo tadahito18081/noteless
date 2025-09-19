@@ -46,7 +46,7 @@ dependencies:
   quick_actions: ^0.4.0+8
   receive_sharing_intent: ^1.4.1
   quiver: ^3.0.0
-  intl: ^0.17.0
+  intl: ^0.16.1
   permission_handler: ^6.1.0
   uuid: ^3.0.3
 
