@@ -3,10 +3,10 @@ name: Build Android APK
 
 # ワークフローが実行されるタイミングを定義
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 # 実行する一連のタスク（ジョブ）を定義
 jobs:
@@ -16,7 +16,7 @@ jobs:
 
     # ジョブの中の個別の手順（ステップ）
     steps:
-      # 1. リポジトリのソースコードをチェックアウトする
+      # 1. あなたのリポジトリの最新のコードをチェックアウトする
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -27,11 +27,11 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      # 3. Flutter SDK (1.22.6) をセットアップする ★★★ ここが最終修正 ★★★
+      # 3. Flutter SDK (2.2.3) をセットアップする
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '1.22.6' # Null Safety導入前の最終安定版
+          flutter-version: '2.2.3'
           cache: true
 
       # 4. Flutterの依存パッケージをインストールする
