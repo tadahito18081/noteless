@@ -38,9 +38,11 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
 
-      # 5. リリース署名の要求を無効化する ★★★ ここが新しい部分 ★★★
+      # 5. リリース署名の定義と使用を無効化する ★★★ ここが最終修正 ★★★
       - name: Disable release signing in build.gradle
-        run: sed -i '/signingConfig signingConfigs.release/d' android/app/build.gradle
+        run: |
+          sed -i "s/storeFile file(System.getenv(\"KEYSTORE_PATH\"))/\/\/ storeFile/g" android/app/build.gradle
+          sed -i '/signingConfig signingConfigs.release/d' android/app/build.gradle
 
       # 6. AndroidのAPKファイルをビルドする
       - name: Build APK
@@ -51,4 +53,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: noteless-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk```
